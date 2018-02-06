@@ -25,7 +25,7 @@
                             <th scope="col">#</th>
                         </tr>  
                     </thead>
-                    <tbody>
+                    <tbody class="tbody-scroll-500">
                     	<?php
 
                     		foreach ($lesArbres as $unArbre) {
@@ -34,7 +34,7 @@
                     			echo("<td scope='col'>".$unArbre->libelleGenre."</td>");
                     			echo("<td scope='col'>".$unArbre->libelleEspece."</td>");
                     			echo("<td scope='col' >".$unArbre->commune."</td>");
-                    			echo(" <td scope='col'><a href='/liste/1'>Voir</a></td></tr>");
+                    			echo("<td scope='col'><a href='/liste/detail/".$unArbre->idArbre."'>Voir</a></td></tr>");
                     		}
 
                     	?>

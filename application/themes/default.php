@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <title>Bubuche Statistiques</title>
 </head>
 <body>
@@ -48,11 +48,12 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="assets/js/angular.js"></script>
+    <script type="text/javascript" src="<?= '/assets/js/jquery.min.js' ?>"></script>
+    <script type="text/javascript" src="<?= '/assets/js/bootstrap.min.js' ?>"></script>
+    <script type="text/javascript" src="/assets/js/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 
-    <script type="text/javascript" src="assets/js/mychart.js"></script>
+    <script type="text/javascript" src="/assets/js/mychart.js"></script>
 
     <script>
         // $("input[type=checkbox]").click(function(){

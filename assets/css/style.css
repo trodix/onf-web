@@ -56,11 +56,18 @@ h5{
 	padding-left: 0 !important;
 }
 
-tbody {
+.tbody-scroll-500 {
 	display: block;
 	height: 500px;
 	overflow: auto;
 }
+
+.tbody-scroll-300 {
+	display: block;
+	height: 300px;
+	overflow: auto;
+}
+
 
 thead,
 tbody tr {
