@@ -1,3 +1,7 @@
+body{
+	
+}
+
 header{
 	width: auto;
 	background-color: #5CB85C;
@@ -8,11 +12,21 @@ h5{
 	color: white;
 }
 
+/*.espece:checked + .filtre{
+	background-color: #009037
+}*/
+
 .filtre{
 	color: white;
 	text-align: right;
 	padding-right: 20px;
 }
+
+/* .container{
+	position: absolute;	
+	top: 10%;
+	left: 18%;
+} */
 
 .listeCheckBox{
 	display: flex;
@@ -26,7 +40,7 @@ h5{
 	
 }
 
-a{
+#accueil{
 	color: white;
 	padding: 12px;
 	
@@ -41,3 +55,23 @@ a{
 	padding-right: 0 !important;
 	padding-left: 0 !important;
 }
+
+tbody {
+	display: block;
+	height: 500px;
+	overflow: auto;
+}
+
+thead,
+tbody tr {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+}
+
+thead {
+	width: calc( 100% - 1em)
+}
+
+
+

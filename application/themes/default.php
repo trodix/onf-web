@@ -20,9 +20,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-3 no-padding">
-                <!-- <div class="vertical-menu d-flex justify-content-start"> -->
                 <nav class="navbar vertical-menu navbar-fixed-side">
-                    <a href="/">Accueil</a>
+                    <a id="accueil" href="/">Accueil</a>
                     <h5>Recherche par Filtre :</h5>
                     <div class="listeCheckBox">
                         <div class="filtre">
@@ -33,7 +32,7 @@
                         <div class="filtre">
                             <label for="cbEspece">Espece</label>
                             <input id="cbEspece" type="checkbox" name="" placeholder="Espece"/>
-                        </div class="filtre">
+                        </div>
 
                         <div class="filtre">
                             <label for="cbCommune">Commune</label>
@@ -41,7 +40,6 @@
                         </div>
                     </div>
                 </nav>
-                <!-- </div> -->
             </div>
             <div class="col-9">
                 <?= $output ?>
@@ -49,6 +47,7 @@
         </div>
     </div>
 
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 
