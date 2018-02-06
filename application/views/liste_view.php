@@ -11,7 +11,8 @@
     </div>
 </div>
 
-<div class="row justify-content-center">
+<div class="row">
+<div class="col">
     <div class="table-responsive">
         <table class="table table-striped">
             <thead class="thead-dark">
@@ -32,16 +33,11 @@
             </tbody>
         </table>
     </div>
+    </div>
 </div>
 
 <div class="row">
     <div class="col-sm-4">
         <canvas id="myChart"></canvas>
-    </div>
-    <div class="col-sm-4">
-        <canvas id="myChart2"></canvas>
-    </div>
-    <div class="col-sm-4">
-        <canvas id="myChart3"></canvas>
     </div>
 </div>

@@ -36,9 +36,7 @@
                 <input id="cbEspece" type="checkbox" name="" placeholder="Espece"/>
             </div>
         </div>
-
-
-         </div>
+    </div>
     <div class="container">
         <?= $output ?>
     </div>
@@ -50,8 +48,6 @@
 
     <script>
         createChartCities(document.getElementById('myChart').getContext('2d'));
-        createChartCities(document.getElementById('myChart2').getContext('2d'));
-        createChartCities(document.getElementById('myChart3').getContext('2d'));
     </script>
 </body>
 </html>
