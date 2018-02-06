@@ -7,9 +7,38 @@
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Bubuche</title>
+    <title>Bubuche Statistiques</title>
 </head>
 <body>
+    <header>
+        <div class="btn btn-success">
+            <h1>Bubûche Statistiques</h1>
+        </div>
+
+    </header>
+    <div class="vertical-menu">
+        <a href="#">Accueil</a>
+        <h5>Recherche par Filtre :</h5>
+        <div class="listeCheckBox">
+
+            <div class="filtre">
+                <label for="cbEspece">Espece</label>
+                <input id="cbEspece" type="checkbox" name="" placeholder="Espece"/>
+            </div>
+
+            <div class="filtre">
+                <label for="cbEspece">Espece</label>
+                <input id="cbEspece" type="checkbox" name="" placeholder="Espece"/>
+            </div class="filtre">
+
+            <div class="filtre">
+                <label for="cbEspece">Espece</label>
+                <input id="cbEspece" type="checkbox" name="" placeholder="Espece"/>
+            </div>
+        </div>
+
+
+         </div>
     <div class="container">
         <?= $output ?>
     </div>
