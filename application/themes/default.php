@@ -17,23 +17,23 @@
 
     </header>
     <div class="vertical-menu">
-        <a href="#">Accueil</a>
+        <h4><a href="#">Accueil</a></h4>
         <h5>Recherche par Filtre :</h5>
         <div class="listeCheckBox">
 
             <div class="filtre">
                 <label for="cbEspece">Espece</label>
-                <input id="cbEspece" type="checkbox" name="" placeholder="Espece"/>
+                <input class="espece" id="cbEspece" type="checkbox" name="" placeholder="Espece"/>
             </div>
 
             <div class="filtre">
-                <label for="cbEspece">Espece</label>
-                <input id="cbEspece" type="checkbox" name="" placeholder="Espece"/>
+                <label for="cbGenre">Genre</label>
+                <input id="cbGenre" type="checkbox" name="" placeholder="Espece"/>
             </div class="filtre">
 
             <div class="filtre">
-                <label for="cbEspece">Espece</label>
-                <input id="cbEspece" type="checkbox" name="" placeholder="Espece"/>
+                <label for="cbCommune">Commune</label>
+                <input id="cbCommune" type="checkbox" name="" placeholder="Espece"/>
             </div>
         </div>
 
