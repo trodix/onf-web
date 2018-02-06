@@ -1,7 +1,7 @@
 <div class="row">    
     <div class="col-3 no-padding">
         <nav class="navbar vertical-menu navbar-fixed-side">
-            <a id="accueil" href="/">Accueil</a>
+            <!-- <a class="accueil" href="/">Accueil</a> -->
             <h5>Recherche par Filtre :</h5>
             <div class="listeCheckBox">
                 <div class="filtre">

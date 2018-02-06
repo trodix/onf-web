@@ -14,7 +14,14 @@
         <div class="btn btn-success">
             <h1>Bubûche Statistiques</h1>
         </div>
-
+        <nav class="navbar ">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="/" class="nav-link accueil"><i class="fa fa-home"></i>Accueil</a>
+                </li>
+            </ul>
+        </nav>
+        
     </header>
     
     <div class="container-fluid">

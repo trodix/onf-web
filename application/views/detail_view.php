@@ -1,4 +1,6 @@
-<h1>Details de l'arbre n°<?= $unArbre->idArbre ?></h1>
+<div class="row">
+    <h1>Details de l'arbre n°<?= $unArbre->idArbre ?></h1>
+</div>
 <div class="row">
     <div class="col">
         <div class="card">
