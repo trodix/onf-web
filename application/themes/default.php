@@ -44,11 +44,12 @@
             <div class="col-9">
                 <?= $output ?>
             </div>
+
         </div>
     </div>
 
-    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="assets/js/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 
     <script type="text/javascript" src="assets/js/mychart.js"></script>
@@ -73,6 +74,14 @@
         //     }
         // });
         createChartCities(document.getElementById('myChart').getContext('2d'));
+
+        $scope.arbre = [
+        {
+            "idArbre" : <?= $lesArbres->idArbre();?>,
+            "genre" : <?= $lesArbres->libellefrancais();?>,
+            "espece ": ""
+        }];
+        
     </script>
 </body>
 </html>
