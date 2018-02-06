@@ -42,6 +42,16 @@
     <div class="container">
         <?= $output ?>
     </div>
+
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+
+    <script type="text/javascript" src="assets/js/mychart.js"></script>
+
+    <script>
+        createChartCities(document.getElementById('myChart').getContext('2d'));
+        createChartCities(document.getElementById('myChart2').getContext('2d'));
+        createChartCities(document.getElementById('myChart3').getContext('2d'));
+    </script>
 </body>
-<script type="text/javascript" src="assets/js/bootstrap.js"></script>
 </html>
