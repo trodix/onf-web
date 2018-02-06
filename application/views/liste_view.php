@@ -1,3 +1,4 @@
+<h1>Liste des arbres</h1>
 
 <div class="row justify-content-center">
     <div class="col-md-8">
@@ -10,30 +11,29 @@
     </div>
 </div>
 
-<div class="row justify-content-center">
-	<div class="col col-md-11">
-		<h1>Liste des arbres</h1>
-	    <div class="table-responsive">
-	        <table class="table table-striped">
-	            <thead class="thead-dark">
-	                <tr>
-	                    <th scope="col">id</th>
-	                    <th scope="col">Genre</th>
-	                    <th scope="col">Espece</th>
-	                    <th scope="col">Commune</th>
-	                </tr>  
-	            </thead>
-	            <tbody>
-	                <tr>
-	                    <td>1</td>
-	                    <td>1</td>
-	                    <td>1</td>
-	                    <td>1</td>
-	                </tr>
-	            </tbody>
-	        </table>
-	    </div>
-	</div>
+<div class="row">
+<div class="col">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Genre</th>
+                    <th scope="col">Espece</th>
+                    <th scope="col">Commune</th>
+                </tr>  
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
 </div>
 
 <div class="row">

@@ -19,11 +19,12 @@
     <div class="vertical-menu">
         <h4><a href="#">Accueil</a></h4>
         <h5>Recherche par Filtre :</h5>
+
         <div class="listeCheckBox">
 
             <div class="filtre">
                 <label for="cbEspece">Espece</label>
-                <input class="espece" id="cbEspece" type="checkbox" name="" placeholder="Espece"/>
+                <input id="cbEspece" type="checkbox" name="" placeholder="Espece"/>
             </div>
 
             <div class="filtre">
@@ -33,12 +34,11 @@
 
             <div class="filtre">
                 <label for="cbCommune">Commune</label>
-                <input id="cbCommune" type="checkbox" name="" placeholder="Espece"/>
+                <input id="cbCommune" type="checkbox" placeholder="Espece" checked />
             </div>
+
         </div>
-
-
-         </div>
+    </div>
     <div class="container">
         <?= $output ?>
     </div>
@@ -50,8 +50,6 @@
 
     <script>
         createChartCities(document.getElementById('myChart').getContext('2d'));
-        createChartCities(document.getElementById('myChart2').getContext('2d'));
-        createChartCities(document.getElementById('myChart3').getContext('2d'));
     </script>
 </body>
 </html>
