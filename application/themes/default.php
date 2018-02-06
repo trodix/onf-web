@@ -54,6 +54,24 @@
     <script type="text/javascript" src="assets/js/mychart.js"></script>
 
     <script>
+        // $("input[type=checkbox]").click(function(){
+        //     let elementId = $(this).attr('id');
+        //     switch (elementId) {
+        //         case 'cbGenre':
+        //             createChartCities(document.getElementById('myChart').getContext('2d'));
+        //             break;
+        //         case 'cbEspece':
+        //             createChartCities(document.getElementById('myChart').getContext('2d'));
+        //             break;
+        //         case 'cbCommune':
+        //             createChartCities(document.getElementById('myChart').getContext('2d'));
+        //             break;
+            
+        //         default:
+        //             console.log('default');
+        //             break;
+        //     }
+        // });
         createChartCities(document.getElementById('myChart').getContext('2d'));
     </script>
 </body>
