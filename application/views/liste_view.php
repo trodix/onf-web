@@ -14,6 +14,7 @@
 <div class="row">
 <div class="col">
     <div class="table-responsive">
+    	<p>test : {{arbre.idArbre}}</p>
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>

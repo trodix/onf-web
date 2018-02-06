@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,12 +44,21 @@
     </div>
 
     <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="assets/js/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 
     <script type="text/javascript" src="assets/js/mychart.js"></script>
 
     <script>
         createChartCities(document.getElementById('myChart').getContext('2d'));
+
+            $scope.arbre = [
+            {
+                "idArbre" : <?= $lesArbres->idArbre();?>,
+                "genre" : <?= $lesArbres->libellefrancais();?>,
+                "espece ": ""
+            }]
+        
     </script>
 </body>
 </html>
