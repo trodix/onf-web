@@ -22,9 +22,11 @@ h5{
 	padding-right: 20px;
 }
 
-.container{
-	z-index : -99;
-}
+/* .container{
+	position: absolute;	
+	top: 10%;
+	left: 18%;
+} */
 
 .listeCheckBox{
 	display: flex;
@@ -32,19 +34,44 @@ h5{
 }
 
 .vertical-menu{
-	padding: 10px;
-	width: 210px;
+	/*padding: 10px;
+	width: 210px; */
 	background-color: #5CB85C;
-	float: left;
+	
 }
 
-a{
+#accueil{
 	color: white;
 	padding: 12px;
 	
 }
 
 .filtre:hover{
-	background-color: #009037;
+	background-color: #009037
 
 }
+
+.no-padding {
+	padding-right: 0 !important;
+	padding-left: 0 !important;
+}
+
+tbody {
+	display: block;
+	height: 500px;
+	overflow: auto;
+}
+
+thead,
+tbody tr {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+}
+
+thead {
+	width: calc( 100% - 1em)
+}
+
+
+
