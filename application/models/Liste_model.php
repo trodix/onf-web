@@ -14,17 +14,50 @@ class Liste_model extends CI_Model {
         return $query->result();
     }
 
-    function read($id) {
+    // function read($id) {
+
+    //      $query = $this->db->from('arbre')
+    //                       ->join('espece', 'espece.idEspece = arbre.idEspece')
+    //                       ->join('genre', 'genre.idGenre = espece.idGenre')
+    //                       ->join('intervention', 'intervention.idArbre = arbre.idArbre')
+    //                       ->join('typeIntervention', 'typeIntervention.idType = intervention.idType')
+    //                       ->where('arbre.idArbre', $id)
+    //                       ->get();
+               
+    //     return $query->row();
+    // }
+
+    function readArbre($id) {
 
          $query = $this->db->from('arbre')
                           ->join('espece', 'espece.idEspece = arbre.idEspece')
                           ->join('genre', 'genre.idGenre = espece.idGenre')
-                          ->join('intervention', 'intervention.idArbre = arbre.idArbre')
-                          ->join('typeIntervention', 'typeIntervention.idType = intervention.idType')
                           ->where('arbre.idArbre', $id)
                           ->get();
                
         return $query->row();
+    }
+
+    function readLesInterventions($id) {
+
+         $query = $this->db->from('intervention')
+                          ->join('arbre', 'intervention.idArbre = arbre.idArbre')
+                          ->join('typeIntervention', 'typeIntervention.idType = intervention.idType')
+                          ->where('intervention.idArbre', $id)
+                          ->get();
+               
+        return $query->result();
+    }
+
+    function readLesGenres() {
+        $query = $this->db->query('
+                                SELECT genre.libelleGenre, count(*) as qteArbreGenre FROM arbre
+                                inner join espece on espece.idEspece = arbre.idEspece
+                                inner join genre on genre.idGenre = espece.idGenre
+                                group by genre.libelleGenre;'
+                            );
+
+        return $query->result();
     }
     
 }

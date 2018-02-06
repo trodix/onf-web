@@ -1,3 +1,26 @@
+function getGenres(){
+    $.ajax({
+        url: "/api/getGenres",
+        cache: false,
+        // data: "zlCateg=" + escape(categChoisie),
+        datatype: "json",
+        success: function (json) {
+            // $('#zlProduit').empty();
+            // $('#zlProduit').append(html);
+            let lesGenres = [];
+            for(let i = 0; i < json.length; i++){
+                lesGenres.push(
+                    {
+                        libelleGenre: json[i].libelleGenre,
+                        qteArbreGenre: json[i].qteArbreGenre
+                    }
+                );
+            }
+            return lesGenres;
+        }
+    });
+}
+
 function createChartCities(element) {
 
     let myChart = element;
@@ -7,12 +30,23 @@ function createChartCities(element) {
     Chart.defaults.global.defaultFontSize = 18;
     Chart.defaults.global.defaultFontColor = '#777';
 
+    let lesGenres = getGenres();
+    let lesLibGenres = [];
+    let qteArbreGenre = [];
+    for (let index = 0; index < array.length; index++) {
+        lesLibGenres.push();
+        qteArbreGenre.push();
+
+        
+    }
+
     let massPopChart = new Chart(myChart, {
         type: 'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
         data: {
-            labels: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'],
+            //labels: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'],
+            labels: getLibGenre(),
             datasets: [{
-                label: 'Population',
+                label: 'Genres',
                 data: [
                     617594,
                     181045,
@@ -40,7 +74,7 @@ function createChartCities(element) {
         options: {
             title: {
                 display: true,
-                text: 'Largest Cities In Massachusetts',
+                text: 'Genres les plus courants',
                 fontSize: 25
             },
             legend: {

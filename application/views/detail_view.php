@@ -27,9 +27,13 @@
                 </thead>
                 <tbody class="tbody-scroll-300">
                     <tr>
-                        <td scope='col'><?= $unArbre->idArbre ?></td>
-                        <td scope='col'><?= $unArbre->dateIntervention ?></td>
-                        <td scope='col'><?= $unArbre->libelleType ?></td>
+                        <?php
+                        foreach($lesInterventions as $uneIntervention):
+                        ?>
+                        <td scope='col'><?= $uneIntervention->idArbre ?></td>
+                        <td scope='col'><?= $uneIntervention->dateIntervention ?></td>
+                        <td scope='col'><?= $uneIntervention->libelleType ?></td>
+                        <?php endforeach ?>
                     </tr>
                 </tbody>
             </table>
@@ -42,7 +46,7 @@
         <div class="card">
             <div class="card-block">
                 <h2>Observations:</h2>
-                <P><?= $unArbre->observations ?></P>
+                <P><?= $uneIntervention->observations ?></P>
             </div>
         </div>
     </div>
