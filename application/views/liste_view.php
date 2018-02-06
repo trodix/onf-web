@@ -33,3 +33,15 @@
         </table>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-sm-4">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div class="col-sm-4">
+        <canvas id="myChart2"></canvas>
+    </div>
+    <div class="col-sm-4">
+        <canvas id="myChart3"></canvas>
+    </div>
+</div>
