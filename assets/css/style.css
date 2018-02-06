@@ -14,22 +14,16 @@ h5{
 	padding-right: 20px;
 }
 
-/* .container{
-	position: absolute;	
-	top: 10%;
-	left: 18%;
-} */
-
 .listeCheckBox{
 	display: flex;
 	flex-direction: column;
 }
 
 .vertical-menu{
-	padding: 10px;
-	width: 210px;
+	/*padding: 10px;
+	width: 210px; */
 	background-color: #5CB85C;
-	float: left;
+	
 }
 
 a{
@@ -41,4 +35,9 @@ a{
 .filtre:hover{
 	background-color: #009037
 
+}
+
+.no-padding {
+	padding-right: 0 !important;
+	padding-left: 0 !important;
 }
