@@ -21,7 +21,7 @@
                         <th scope="col">id</th>
                         <th scope="col">Date intervention</th>
                         <th scope="col">Type traitement</th>
-                    </tr>  
+                    </tr>
                 </thead>
                 <tbody class="tbody-scroll-300">
                     <tr>

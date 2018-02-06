@@ -19,6 +19,10 @@ class Liste extends CI_Controller {
         }
         //Appel à la fonction readAll du modele article_model
 		$data = array('unArbre' => $this->liste_model->read($id));
+		print_r($data);
+		if(empty($data)){
+			$this->layout->view('detail_view', $id);
+		}
 		$this->layout->view('detail_view', $data);
 	}
 }
