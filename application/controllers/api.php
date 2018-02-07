@@ -6,7 +6,7 @@ class api extends CI_Controller {
 	public function index()
 	{
 
-        redirect('/', 'location');
+        	redirect('/', 'location');
 	}
 
 	public function getGenres()
@@ -15,6 +15,23 @@ class api extends CI_Controller {
         $lesGenres = $this->liste_model->readLesGenres();
 		
 		header('Content-Type: application/json');
-        echo json_encode($lesGenres);
+		echo json_encode($lesGenres);
+	}
+
+	public function getObservation($idArbre, $idIntervention)
+	{
+		
+
+		// if(!isset($idArbre, $idIntervention)){
+		// 	redirect('/', 'location');
+		// }
+        		
+    	$uneObservation = $this->liste_model->readUneObservation($idArbre, $idIntervention);
+		
+			header('Content-Type: application/json');
+      echo json_encode(
+				[
+					$uneObservation
+				]);
 	}
 }

@@ -59,5 +59,15 @@ class Liste_model extends CI_Model {
 
         return $query->result();
     }
+
+    function readUneObservation($idArbre, $idIntervention){
+        $query = $this->db->query("
+            select observations from intervention 
+            right join arbre on intervention.idArbre = arbre.idArbre
+            where arbre.idArbre = $idArbre and intervention.idIntervention = $idIntervention"
+        );
+        
+        return $query->row();
+    }
     
 }

@@ -23,6 +23,7 @@
                         <th scope="col">id</th>
                         <th scope="col">Date intervention</th>
                         <th scope="col">Type traitement</th>
+                        <th scope="col">#</th>
                     </tr>
                 </thead>
                 <tbody class="tbody-scroll-300">
@@ -33,6 +34,15 @@
                         <td scope='col'><?= $uneIntervention->idArbre ?></td>
                         <td scope='col'><?= $uneIntervention->dateIntervention ?></td>
                         <td scope='col'><?= $uneIntervention->libelleType ?></td>
+                        <td scope='col'><button class="btn btn-success" 
+                                            data-idArbre='<?= $uneIntervention->idArbre ?>' 
+                                            data-idIntervention='<?= $uneIntervention->idIntervention ?>' 
+                                            onclick="getObservation($(this).data('idArbre'), 
+                                            $(this).data('idIntervention'));">
+                                            Details</button></td>
+                                            <script>
+                                            getObservation(<?= $uneIntervention->idArbre?>, <?= $uneIntervention->idIntervention ?>);
+                                            </script>
                         <?php endforeach ?>
                     </tr>
                 </tbody>
@@ -44,11 +54,22 @@
 <div class="row">
     <div class="col">
         <div class="card">
-            <div class="card-block">
+            <div class="card-block" id="divObs">
                 <h2>Observations:</h2>
-                <P><?= $uneIntervention->observations ?></P>
+                <P id="observation-content"></P>
             </div>
         </div>
     </div>
 </div>
 
+<div class="row">
+    <div class="col-sm-4">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div class="col-sm-4">
+        <canvas id="myChart2"></canvas>
+    </div>
+    <div class="col-sm-4">
+        <canvas id="myChart3"></canvas>
+    </div>
+</div>

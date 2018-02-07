@@ -74,7 +74,7 @@
 
     <div class="row">
         <div class="col-sm-4">
-            <canvas id="myChart"></canvas>
+            <canvas id="chartGenre"></canvas>
         </div>
         <div class="col-sm-4">
             <canvas id="myChart2"></canvas>
@@ -87,3 +87,7 @@
  </div>
 
 </div> <!-- <div class='row'> principale -->
+
+<script>
+    createChartGenre(document.getElementById('chartGenre').getContext('2d'));
+</script>

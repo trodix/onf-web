@@ -5,23 +5,27 @@ function getGenres(){
         // data: "zlCateg=" + escape(categChoisie),
         datatype: "json",
         success: function (json) {
-            // $('#zlProduit').empty();
-            // $('#zlProduit').append(html);
+            console.log(json);
             let lesGenres = [];
             for(let i = 0; i < json.length; i++){
-                lesGenres.push(
+                lesGenres[i] = 
                     {
                         libelleGenre: json[i].libelleGenre,
                         qteArbreGenre: json[i].qteArbreGenre
-                    }
-                );
+                    };
+                
             }
-            return lesGenres;
+            return console.log('return: ' + lesGenres);
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            console.log(xhr.status);
+            console.log(ajaxOptions);
+            console.log(thrownError);
         }
     });
 }
 
-function createChartCities(element) {
+function createChartGenre(element) {
 
     let myChart = element;
 
@@ -32,29 +36,32 @@ function createChartCities(element) {
 
     let lesGenres = getGenres();
     let lesLibGenres = [];
-    let qteArbreGenre = [];
-    for (let index = 0; index < array.length; index++) {
-        lesLibGenres.push();
-        qteArbreGenre.push();
+    let lesQteArbreGenre = [];
 
-        
+    // for (let i = 0; i < lesGenres.length; i++) {
+    //     lesLibGenres[i] = lesGenres[i].libelleGenre;
+    //     lesQteArbreGenre[i] = lesGenres[i].qteArbreGenre;
+    // }
+
+    for(unGenre in lesGenres){
+        console.log(unGenre);
+        for(unObjet in unGenre){
+            console.log('objet: ' + unObjet);
+        }
+        // lesLibGenres.push(unGenre.libelleGenre);
+        // lesQteArbreGenre.push(unGenre.qteArbreGenre);
     }
+
+    console.log(lesLibGenres);
 
     let massPopChart = new Chart(myChart, {
         type: 'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
         data: {
             //labels: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'],
-            labels: getLibGenre(),
+            labels: lesLibGenres,
             datasets: [{
                 label: 'Genres',
-                data: [
-                    617594,
-                    181045,
-                    153060,
-                    106519,
-                    105162,
-                    95072
-                ],
+                data: lesQteArbreGenre,
                 //backgroundColor:'green',
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.6)',

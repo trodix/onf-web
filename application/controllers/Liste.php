@@ -22,8 +22,6 @@ class Liste extends CI_Controller {
 			'unArbre' => $this->liste_model->readArbre($id),
 			'lesInterventions' => $this->liste_model->readLesInterventions($id)
 		];
-
-		print_r($data);
 		
 		$this->layout->view('detail_view', $data);
 	}

@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="/assets/css/bootstrap.css">
     <link rel="stylesheet" href="/assets/fonts/fontawesome.css">
     <link rel="stylesheet" href="/assets/css/style.css">
+
+    <script type="text/javascript" src="<?= '/assets/js/jquery.min.js' ?>"></script>
+    <script type="text/javascript" src="<?= '/assets/js/bootstrap.min.js' ?>"></script>
+    <script type="text/javascript" src="/assets/js/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+
+    <script type="text/javascript" src="/assets/js/observation.js"></script>
+    <script type="text/javascript" src="/assets/js/mychart.js"></script>
+
     <title>Bubuche Statistiques</title>
 </head>
 <body>
@@ -30,14 +39,10 @@
                 <?= $output ?>
 
         </div>
-    </div>
+    </div>   
 
-    <script type="text/javascript" src="<?= '/assets/js/jquery.min.js' ?>"></script>
-    <script type="text/javascript" src="<?= '/assets/js/bootstrap.min.js' ?>"></script>
-    <script type="text/javascript" src="/assets/js/angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-
-    <script type="text/javascript" src="/assets/js/mychart.js"></script>
+    <footer>
+    </footer> 
 
     <script>
         // $("input[type=checkbox]").click(function(){
@@ -58,7 +63,7 @@
         //             break;
         //     }
         // });
-        createChartCities(document.getElementById('myChart').getContext('2d'));
+        //createChartCities(document.getElementById('myChart').getContext('2d'));
 
         $scope.arbre = [
         {
