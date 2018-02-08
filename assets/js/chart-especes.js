@@ -1,6 +1,6 @@
 function createChartEspece(element) {
     $.ajax({
-        url: base_url + "/api/getEspeces",
+        url: base_url + "api/getEspeces",
         cache: false,
         // data: "zlCateg=" + escape(categChoisie),
         datatype: "json",
