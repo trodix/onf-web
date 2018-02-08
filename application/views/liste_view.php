@@ -73,14 +73,14 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-4">
             <canvas id="chartGenre"></canvas>
         </div>
-        <div class="col-sm-4">
-            <canvas id="myChart2"></canvas>
+        <div class="col-4">
+            <canvas id="chartEspece"></canvas>
         </div>
-        <div class="col-sm-4">
-            <canvas id="myChart3"></canvas>
+        <div class="col-4">
+            <canvas id="chartCommune"></canvas>
         </div>
     </div>
 
@@ -89,5 +89,64 @@
 </div> <!-- <div class='row'> principale -->
 
 <script>
-    createChartGenre(document.getElementById('chartGenre').getContext('2d'));
+
+$('.listeCheckBox :checkbox').change(function() {
+ 
+    if (this.checked) {
+        console.log('check #cbGenre');
+        switch (this.id) {
+            case 'cbGenre':
+                $('#chartGenre').show();
+                createChartGenre(document.getElementById('chartGenre').getContext('2d'));
+                break;
+
+            case 'cbEspece':
+                $('#chartEspece').show();
+                createChartEspece(document.getElementById('chartEspece').getContext('2d'));
+                break;
+
+            case 'cbCommune':
+                $('#chartCommune').show();
+                createChartCommune(document.getElementById('chartCommune').getContext('2d'));
+                break;
+        
+            default:
+                break;
+        }
+    } else {
+
+        switch (this.id) {
+            case 'cbGenre':
+                $('#chartGenre').hide();
+                //parent.appendChild(document.createElement("<canevas id='chartGenre'></canevas>"));
+                //$(parent).add("<canevas id='chartGenre'></canevas>");
+                break;
+
+            case 'cbEspece':
+                $('#chartEspece').hide();
+                //parent.appendChild(document.createElement("<canevas id='chartEspece'></canevas>"));
+                break;
+
+            case 'cbCommune':
+                $('#chartCommune').hide();
+                //parent.appendChild(document.createElement("<canevas id='chartCommune'></canevas>"));
+                break;
+        
+            default:
+                break;
+        }
+    }
+
+});
+
+// createChartGenre(document.getElementById('chartGenre').getContext('2d'));
+// createChartEspece(document.getElementById('chartEspece').getContext('2d'));
+// createChartCommune(document.getElementById('chartCommune').getContext('2d'));
+
+
+
+$("html").ready(function() {
+  $("input[type=checkbox]").prop('checked', false);
+});
+   
 </script>

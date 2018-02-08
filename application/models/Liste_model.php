@@ -50,12 +50,31 @@ class Liste_model extends CI_Model {
     }
 
     function readLesGenres() {
+        $query = $this->db->query("
+            SELECT genre.libelleGenre, count(*) as qteArbreGenre FROM arbre
+            inner join espece on espece.idEspece = arbre.idEspece
+            inner join genre on genre.idGenre = espece.idGenre
+            group by genre.libelleGenre;"
+        );
+
+        return $query->result();
+    }
+
+    function readLesEspeces() {
+        $query = $this->db->query("
+            SELECT espece.libelleEspece, count(*) as qteArbreEspece FROM arbre
+            inner join espece on espece.idEspece = arbre.idEspece
+            group by espece.libelleEspece;"
+        );
+
+        return $query->result();
+    }
+
+    function readLesCommunes() {
         $query = $this->db->query('
-                                SELECT genre.libelleGenre, count(*) as qteArbreGenre FROM arbre
-                                inner join espece on espece.idEspece = arbre.idEspece
-                                inner join genre on genre.idGenre = espece.idGenre
-                                group by genre.libelleGenre;'
-                            );
+            SELECT commune, count(*) as qteArbreCommune FROM arbre
+            group by commune;'
+        );
 
         return $query->result();
     }
@@ -69,5 +88,17 @@ class Liste_model extends CI_Model {
         
         return $query->row();
     }
-    
+
+    function readLesInterventionsArbre($idArbre) {
+        $query = $this->db->query("
+            select libelleType, count(*) as qteArbreTypeIntervention
+            from typeintervention
+            inner join intervention on typeintervention.idType = intervention.idType
+            inner join arbre on arbre.idArbre = intervention.idArbre
+            where arbre.idArbre = $idArbre
+            group by typeintervention.libelleType"
+        );
+
+        return $query->result();
+    }   
 }

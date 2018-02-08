@@ -27,24 +27,23 @@
                     </tr>
                 </thead>
                 <tbody class="tbody-scroll-300">
-                    <tr>
+                    
                         <?php
                         foreach($lesInterventions as $uneIntervention):
                         ?>
-                        <td scope='col'><?= $uneIntervention->idArbre ?></td>
-                        <td scope='col'><?= $uneIntervention->dateIntervention ?></td>
-                        <td scope='col'><?= $uneIntervention->libelleType ?></td>
-                        <td scope='col'><button class="btn btn-success" 
-                                            data-idArbre='<?= $uneIntervention->idArbre ?>' 
-                                            data-idIntervention='<?= $uneIntervention->idIntervention ?>' 
-                                            onclick="getObservation($(this).data('idArbre'), 
-                                            $(this).data('idIntervention'));">
-                                            Details</button></td>
-                                            <script>
-                                            getObservation(<?= $uneIntervention->idArbre?>, <?= $uneIntervention->idIntervention ?>);
-                                            </script>
+                        <tr>
+                            <td scope='col'><?= $uneIntervention->idArbre ?></td>
+                            <td scope='col'><?= $uneIntervention->dateIntervention ?></td>
+                            <td scope='col'><?= $uneIntervention->libelleType ?></td>
+                            <td scope='col'><button class="btn btn-success" 
+                                                data-idArbre='<?= $uneIntervention->idArbre ?>' 
+                                                data-idIntervention='<?= $uneIntervention->idIntervention ?>' 
+                                                onclick="getObservation(this.getAttribute('data-idArbre'), 
+                                                this.getAttribute('data-idIntervention'));">
+                                                Details</button></td>
+                        </tr>
                         <?php endforeach ?>
-                    </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -56,7 +55,7 @@
         <div class="card">
             <div class="card-block" id="divObs">
                 <h2>Observations:</h2>
-                <P id="observation-content"></P>
+                <P id="observation-content">Aucune intervention à afficher</P>
             </div>
         </div>
     </div>
@@ -64,12 +63,10 @@
 
 <div class="row">
     <div class="col-sm-4">
-        <canvas id="myChart"></canvas>
-    </div>
-    <div class="col-sm-4">
-        <canvas id="myChart2"></canvas>
-    </div>
-    <div class="col-sm-4">
-        <canvas id="myChart3"></canvas>
+        <canvas id="chartIntervention"></canvas>
     </div>
 </div>
+
+<script>
+    createChartIntervention(document.getElementById('chartIntervention').getContext('2d'), <?= $uneIntervention->idArbre ?>);
+</script>

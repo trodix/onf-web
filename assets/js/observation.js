@@ -1,13 +1,14 @@
 function getObservation(idArbre, idIntervention) {
 
+    let url = escape("/api/getObservation/" + idArbre + "/" + idIntervention);
+
     $.ajax({
-        url: "/api/getObservation/4/1",
+        url: url,
         type: 'GET',
         cache: false,
         //data: "/" + idArbre + "/" + idIntervention,
-        //data: "idArbre=4",
         datatype: 'json',
-        success: function (json) {
+        success: function(json) {
             //let json2 = [{ "observations": "Observation intervention 1 2018-02-22" }];
 
             $('#observation-content').empty();
@@ -19,10 +20,11 @@ function getObservation(idArbre, idIntervention) {
                 $('#observation-content').append('Contenu: ' + json[i].observations);
             }
         },
-        error: function (xhr, ajaxOptions, thrownError) {
+        error: function(xhr, ajaxOptions, thrownError) {
             console.log(xhr.status);
             console.log(ajaxOptions);
             console.log(thrownError);
+            console.log(url);
         }
     });
 

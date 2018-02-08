@@ -6,7 +6,7 @@ class api extends CI_Controller {
 	public function index()
 	{
 
-        	redirect('/', 'location');
+        redirect('/', 'location');
 	}
 
 	public function getGenres()
@@ -16,6 +16,24 @@ class api extends CI_Controller {
 		
 		header('Content-Type: application/json');
 		echo json_encode($lesGenres);
+	}
+
+	public function getEspeces()
+	{
+        		
+        $lesEspeces = $this->liste_model->readLesEspeces();
+		
+		header('Content-Type: application/json');
+		echo json_encode($lesEspeces);
+	}
+
+	public function getCommunes()
+	{
+        		
+        $lesCommunes = $this->liste_model->readLesCommunes();
+		
+		header('Content-Type: application/json');
+		echo json_encode($lesCommunes);
 	}
 
 	public function getObservation($idArbre, $idIntervention)
@@ -29,9 +47,18 @@ class api extends CI_Controller {
     	$uneObservation = $this->liste_model->readUneObservation($idArbre, $idIntervention);
 		
 			header('Content-Type: application/json');
-      echo json_encode(
+      		echo json_encode(
 				[
 					$uneObservation
-				]);
+				]
+			);
+	}
+
+	public function getIntervention($idArbre)
+	{
+		$lesInterventionsArbre = $this->liste_model->readLesInterventionsArbre($idArbre);
+		//print_r($lesInterventionsArbre);
+		header('Content-Type: application/json');
+		echo json_encode($lesInterventionsArbre);
 	}
 }

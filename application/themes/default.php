@@ -14,7 +14,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 
     <script type="text/javascript" src="/assets/js/observation.js"></script>
-    <script type="text/javascript" src="/assets/js/mychart.js"></script>
+    <script type="text/javascript" src="/assets/js/chart-genres.js"></script>
+    <script type="text/javascript" src="/assets/js/chart-especes.js"></script>
+    <script type="text/javascript" src="/assets/js/chart-communes.js"></script>
+    <script type="text/javascript" src="/assets/js/chart-interventions.js"></script>
 
     <title>Bubuche Statistiques</title>
 </head>
