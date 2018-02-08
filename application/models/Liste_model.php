@@ -104,7 +104,7 @@ class Liste_model extends CI_Model {
 
     function readLesInterventionsAll() {
         $query = $this->db->query("
-            select intervention.idIntervention, intervention.dateIntervention, intervention.heureIntervention, 
+            select arbre.idArbre, intervention.idIntervention, intervention.dateIntervention, intervention.heureIntervention, 
             intervention.observations, typeIntervention.idType, typeIntervention.libelleType 
             from typeintervention
             inner join intervention on typeintervention.idType = intervention.idType
