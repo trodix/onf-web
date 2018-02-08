@@ -1,6 +1,6 @@
 function createChartGenre(element) {
     $.ajax({
-        url: "/api/getGenres",
+        url: base_url + "/api/getGenres",
         cache: false,
         // data: "zlCateg=" + escape(categChoisie),
         datatype: "json",

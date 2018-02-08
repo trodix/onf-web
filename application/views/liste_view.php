@@ -57,7 +57,7 @@
                                     <td scope='col'>{{arbre.libelleGenre}}</td>
                                     <td scope='col'>{{arbre.libelleEspece}}</td>
                                     <td scope='col'>{{arbre.commune}}</td>
-                                    <td scope='col'><a href="/liste/detail/{{arbre.idArbre}}">Voir</a></td>
+                                    <td scope='col'><a href='<?=base_url("/liste/detail/")?>{{arbre.idArbre}}'>Voir</a></td>
                                 </tr>
                             </tbody>
                         </table>

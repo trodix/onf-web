@@ -78,4 +78,12 @@ class api extends CI_Controller {
 		header('Content-Type: application/json');
 		echo json_encode(array('lesInterventions' => $lesInterventionsArbre));
 	}
+
+	public function getLesTypesIntervention()
+	{
+		$lesTypesIntervention = $this->liste_model->readLesTypesIntervention();
+		//print_r($lesInterventionsArbre);
+		header('Content-Type: application/json');
+		echo json_encode(array('lesTypesIntervention' => $lesTypesIntervention));
+	}
 }

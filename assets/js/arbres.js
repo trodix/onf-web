@@ -1,7 +1,7 @@
-var app = angular.module("myApp", []);
+let app = angular.module("myApp", []);
 
 $.ajax({
-    url: escape("/api/getArbres"),
+    url: escape(base_url + "/api/getArbres"),
     cache: false,
     // data: "zlCateg=" + escape(categChoisie),
     datatype: "json",
@@ -22,7 +22,7 @@ $.ajax({
 });
 
 app.controller("ArbresCtrl", function ($scope, $http) {
-    $http.get('/api/getArbres/').
+    $http.get(base_url + '/api/getArbres/').
         success(function (data, status, headers, config) {
             $scope.arbres = data;
         }).

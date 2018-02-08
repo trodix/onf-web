@@ -1,6 +1,6 @@
 function getObservation(idArbre, idIntervention) {
 
-    let url = escape("/api/getObservation/" + idArbre + "/" + idIntervention);
+    let url = escape(base_url + "/api/getObservation/" + idArbre + "/" + idIntervention);
 
     $.ajax({
         url: url,

@@ -115,4 +115,12 @@ class Liste_model extends CI_Model {
 
         return $query->result();
     }   
+
+    function readLesTypesIntervention() {
+        $query = $this->db->query("
+            select * from typeIntervention"
+        );
+
+        return $query->result();
+    }   
 }

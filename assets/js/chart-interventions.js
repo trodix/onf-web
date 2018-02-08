@@ -1,6 +1,6 @@
 function createChartIntervention(element, idArbre) {
 
-    let url = escape("/api/getIntervention/" + idArbre);
+    let url = escape(base_url + "/api/getIntervention/" + idArbre);
 
     $.ajax({
         url: url,
