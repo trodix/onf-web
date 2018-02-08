@@ -9,6 +9,7 @@ class Liste_model extends CI_Model {
         $query = $this->db->from('arbre')
                           ->join('espece', 'espece.idEspece = arbre.idEspece')
                           ->join('genre', 'genre.idGenre = espece.idGenre')
+                          ->limit(10,0)
                           ->get();
         // result() transforme le résultat de la requête en un tableau d'objets       
         return $query->result();
