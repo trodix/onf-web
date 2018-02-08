@@ -31,7 +31,7 @@
         <nav class="navbar ">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="/" class="nav-link accueil"><i class="fa fa-home"></i>Accueil</a>
+                    <a href="/" class="nav-link accueil"><i class="fa fa-home"></i> Accueil</a>
                 </li>
             </ul>
         </nav>
