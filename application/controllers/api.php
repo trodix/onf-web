@@ -18,6 +18,15 @@ class api extends CI_Controller {
 		echo json_encode($lesGenres);
 	}
 
+	public function getArbres()
+	{
+        		
+        $lesArbres = $this->liste_model->readAll();
+		
+		header('Content-Type: application/json');
+		echo json_encode($lesArbres);
+	}
+
 	public function getEspeces()
 	{
         		

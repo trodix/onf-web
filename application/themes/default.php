@@ -10,9 +10,11 @@
 
     <script type="text/javascript" src="<?= '/assets/js/jquery.min.js' ?>"></script>
     <script type="text/javascript" src="<?= '/assets/js/bootstrap.min.js' ?>"></script>
-    <script type="text/javascript" src="/assets/js/angular.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.14/angular.js"></script>
+    <!-- <script type="text/javascript" src="/assets/js/angular.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 
+    <script type="text/javascript" src="/assets/js/arbres.js"></script>
     <script type="text/javascript" src="/assets/js/observation.js"></script>
     <script type="text/javascript" src="/assets/js/chart-genres.js"></script>
     <script type="text/javascript" src="/assets/js/chart-especes.js"></script>
@@ -47,34 +49,5 @@
     <footer>
     </footer> 
 
-    <script>
-        // $("input[type=checkbox]").click(function(){
-        //     let elementId = $(this).attr('id');
-        //     switch (elementId) {
-        //         case 'cbGenre':
-        //             createChartCities(document.getElementById('myChart').getContext('2d'));
-        //             break;
-        //         case 'cbEspece':
-        //             createChartCities(document.getElementById('myChart').getContext('2d'));
-        //             break;
-        //         case 'cbCommune':
-        //             createChartCities(document.getElementById('myChart').getContext('2d'));
-        //             break;
-            
-        //         default:
-        //             console.log('default');
-        //             break;
-        //     }
-        // });
-        //createChartCities(document.getElementById('myChart').getContext('2d'));
-
-        $scope.arbre = [
-        {
-            "idArbre" : <?= $lesArbres->idArbre();?>,
-            "genre" : <?= $lesArbres->libellefrancais();?>,
-            "espece ": ""
-        }];
-        
-    </script>
 </body>
 </html>
