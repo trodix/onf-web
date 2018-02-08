@@ -51,7 +51,7 @@
                                 </tr>  
                             </thead>
                             <tbody class="tbody-scroll-500">
-                                <tr ng-repeat="arbre in arbres | filter: {order: query}">
+                                <tr ng-repeat="arbre in arbres | filter: {libelleFrancais: query}">
                                     <td scope='col'>{{arbre.idArbre}}</td>
                                     <td scope='col'>{{arbre.libelleFrancais}}</td>
                                     <td scope='col'>{{arbre.libelleGenre}}</td>
@@ -82,27 +82,22 @@
 
 <script>
 
-let filterBy = 'libelleFrancais';
-
 $('.listeCheckBox :checkbox').change(function() {
  
     if (this.checked) {
         console.log('check #cbGenre');
         switch (this.id) {
             case 'cbGenre':
-                filterBy = 'libelleGenre';
                 $('#chartGenre').show();
                 createChartGenre(document.getElementById('chartGenre').getContext('2d'));
                 break;
 
             case 'cbEspece':
-                filterBy = 'libelleEspece';
                 $('#chartEspece').show();
                 createChartEspece(document.getElementById('chartEspece').getContext('2d'));
                 break;
 
             case 'cbCommune':
-                filterBy = 'commune';
                 $('#chartCommune').show();
                 createChartCommune(document.getElementById('chartCommune').getContext('2d'));
                 break;
