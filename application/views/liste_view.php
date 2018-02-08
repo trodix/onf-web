@@ -82,22 +82,27 @@
 
 <script>
 
+let filterBy = 'libelleFrancais';
+
 $('.listeCheckBox :checkbox').change(function() {
  
     if (this.checked) {
         console.log('check #cbGenre');
         switch (this.id) {
             case 'cbGenre':
+                filterBy = 'libelleGenre';
                 $('#chartGenre').show();
                 createChartGenre(document.getElementById('chartGenre').getContext('2d'));
                 break;
 
             case 'cbEspece':
+                filterBy = 'libelleEspece';
                 $('#chartEspece').show();
                 createChartEspece(document.getElementById('chartEspece').getContext('2d'));
                 break;
 
             case 'cbCommune':
+                filterBy = 'commune';
                 $('#chartCommune').show();
                 createChartCommune(document.getElementById('chartCommune').getContext('2d'));
                 break;
