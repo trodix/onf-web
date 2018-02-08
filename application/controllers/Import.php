@@ -6,7 +6,7 @@ class Import extends CI_Controller {
 	public function index()
 	{
 
-		$data = array('lesArbres' =>$this->liste_model->readAll());
+		$data = array('lesArbres' =>$this->liste_model->readAllLimit10());
 		//var_dump($data);
 		echo json_encode($data);
         
