@@ -6,20 +6,21 @@
             <div class="listeCheckBox">
                 <div class="filtre">
                     <label for="cbGenre">Genre</label>
-                    <input id="cbGenre" type="checkbox" name="" placeholder="Genre"/>
+                    <input id="cbGenre" type="checkbox" name="" placeholder="Genre" ng-checked="changeFilterTo('libelleGenre')"/>
                 </div>
 
                 <div class="filtre">
                     <label for="cbEspece">Espece</label>
-                    <input id="cbEspece" type="checkbox" name="" placeholder="Espece"/>
+                    <input id="cbEspece" type="checkbox" name="" placeholder="Espece" ng-checked="changeFilterTo('libelleGenre')"/>
                 </div>
 
                 <div class="filtre">
                     <label for="cbCommune">Commune</label>
-                    <input id="cbCommune" type="checkbox" name="" placeholder="Commune"/>
+                    <input id="cbCommune" type="checkbox" name="" placeholder="Commune" ng-checked="changeFilterTo('commune')"/>
                 </div>
             </div>
         </nav>
+        {{filter}}
     </div>
 
     <div class="col-9" ng-controller="ArbresCtrl">
@@ -51,7 +52,7 @@
                                 </tr>  
                             </thead>
                             <tbody class="tbody-scroll-500">
-                                <tr ng-repeat="arbre in arbres | filter: {order: query}">
+                                <tr ng-repeat="arbre in arbres | filter: {search: query}">
                                     <td scope='col'>{{arbre.idArbre}}</td>
                                     <td scope='col'>{{arbre.libelleFrancais}}</td>
                                     <td scope='col'>{{arbre.libelleGenre}}</td>
