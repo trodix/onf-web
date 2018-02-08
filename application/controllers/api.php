@@ -18,6 +18,15 @@ class api extends CI_Controller {
 		echo json_encode($lesGenres);
 	}
 
+	public function getArbres()
+	{
+        		
+        $lesArbres = $this->liste_model->readAll();
+		
+		header('Content-Type: application/json');
+		echo json_encode($lesArbres);
+	}
+
 	public function getEspeces()
 	{
         		
@@ -60,5 +69,13 @@ class api extends CI_Controller {
 		//print_r($lesInterventionsArbre);
 		header('Content-Type: application/json');
 		echo json_encode($lesInterventionsArbre);
+	}
+
+	public function getLesInterventionsAll()
+	{
+		$lesInterventionsArbre = $this->liste_model->readLesInterventionsAll();
+		//print_r($lesInterventionsArbre);
+		header('Content-Type: application/json');
+		echo json_encode(array('lesInterventions' => $lesInterventionsArbre));
 	}
 }

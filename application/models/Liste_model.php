@@ -102,4 +102,17 @@ class Liste_model extends CI_Model {
 
         return $query->result();
     }   
+
+    function readLesInterventionsAll() {
+        $query = $this->db->query("
+            select arbre.idArbre, intervention.idIntervention, intervention.dateIntervention, intervention.heureIntervention, 
+            intervention.observations, typeIntervention.idType, typeIntervention.libelleType 
+            from typeintervention
+            inner join intervention on typeintervention.idType = intervention.idType
+            inner join arbre on arbre.idArbre = intervention.idArbre
+            group by typeintervention.libelleType"
+        );
+
+        return $query->result();
+    }   
 }
