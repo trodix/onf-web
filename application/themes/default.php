@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="/assets/fonts/fontawesome.css">
     <link rel="stylesheet" href="/assets/css/style.css">
 
-    <script type="text/javascript" src="<?= '/assets/js/jquery.min.js' ?>"></script>
-    <script type="text/javascript" src="<?= '/assets/js/bootstrap.min.js' ?>"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.14/angular.js"></script>
-    <!-- <script type="text/javascript" src="/assets/js/angular.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <script type="text/javascript" src="<?= '/assets/js/lib/jquery.min.js' ?>"></script>
+    <script type="text/javascript" src="<?= '/assets/js/lib/bootstrap.min.js' ?>"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.14/angular.js"></script> -->
+    <script type="text/javascript" src="/assets/js/lib/angular.js"></script>
+    <script type="text/javascript" src="/assets/js/lib/Chart.min.js"></script>
 
     <script type="text/javascript" src="/assets/js/arbres.js"></script>
     <script type="text/javascript" src="/assets/js/observation.js"></script>
