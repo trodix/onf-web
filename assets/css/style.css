@@ -6,6 +6,8 @@ header{
 	width: auto;
 	background-color: #5CB85C;
 	border-bottom: solid rgb(195,103,78) 5px;
+	display: flex;
+	flex-direction: row;
 }
 
 h5{
@@ -40,7 +42,7 @@ h5{
 	
 }
 
-#accueil{
+.accueil{
 	color: white;
 	padding: 12px;
 	
@@ -56,11 +58,18 @@ h5{
 	padding-left: 0 !important;
 }
 
-tbody {
+.tbody-scroll-500 {
 	display: block;
 	height: 500px;
 	overflow: auto;
 }
+
+.tbody-scroll-300 {
+	display: block;
+	height: 300px;
+	overflow: auto;
+}
+
 
 thead,
 tbody tr {
@@ -71,6 +80,10 @@ tbody tr {
 
 thead {
 	width: calc( 100% - 1em)
+}
+
+footer{
+	margin-top: 100px;
 }
 
 

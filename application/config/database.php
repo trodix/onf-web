@@ -76,6 +76,7 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => '10.121.38.143',
+	//'hostname' => 'localhost',
 	'username' => 'adminBDbubuche',
 	'password' => 'mdpBDbubuche',
 	'database' => 'bdBubuche',
