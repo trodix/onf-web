@@ -1,5 +1,5 @@
 let app = angular.module("myApp", []);
-let url = escape("api/getArbres");
+let url = base_url + escape("api/getArbres");
 
 $.ajax({
     url: url,
@@ -23,7 +23,7 @@ $.ajax({
 });
 
 app.controller("ArbresCtrl", function ($scope, $http) {
-    $http.get('api/getArbres/').
+    $http.get(base_url + 'api/getArbres/').
         success(function (data, status, headers, config) {
             $scope.arbres = data;
         }).
