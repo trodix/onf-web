@@ -1,28 +1,30 @@
 <div class="row" ng-app="myApp">    
-    <div class="col-3 no-padding">
-        <nav class="navbar vertical-menu navbar-fixed-side">
+    <div class="col-sm-3 no-padding">
+        <nav class="navbar flex-column vertical-menu">
             <!-- <a class="accueil" href="/">Accueil</a> -->
-            <h5>Recherche par Filtre :</h5>
-            <div class="listeCheckBox">
-                <div class="filtre">
-                    <label for="cbGenre">Genre</label>
-                    <input id="cbGenre" type="checkbox" name="" placeholder="Genre"/>
-                </div>
+            <div class="" id="navbarSupportedContent">
+                <h5 class="text-right">Visualisation par Filtre :</h5>
+                <ul class="">
+                    <li class="nav-item filtre nav-link">
+                        <label for="cbGenre">Genre</label>
+                        <input id="cbGenre" type="checkbox" name="" placeholder="Genre"/>
+                    </li>
 
-                <div class="filtre">
-                    <label for="cbEspece">Espece</label>
-                    <input id="cbEspece" type="checkbox" name="" placeholder="Espece"/>
-                </div>
+                    <li class="nav-item filtre nav-link">
+                        <label for="cbEspece">Espece</label>
+                        <input id="cbEspece" type="checkbox" name="" placeholder="Espece"/>
+                    </li>
 
-                <div class="filtre">
-                    <label for="cbCommune">Commune</label>
-                    <input id="cbCommune" type="checkbox" name="" placeholder="Commune"/>
-                </div>
+                    <li class="nav-item filtre nav-link">
+                        <label for="cbCommune">Commune</label>
+                        <input id="cbCommune" type="checkbox" name="" placeholder="Commune"/>
+                    </li>
+                </ul>
             </div>
         </nav>
     </div>
 
-    <div class="col-9" ng-controller="ArbresCtrl">
+    <div class="col-sm-9" ng-controller="ArbresCtrl">
         <h1>Liste des arbres</h1>
 
         <div class="row justify-content-center">
@@ -51,7 +53,7 @@
                                 </tr>  
                             </thead>
                             <tbody class="tbody-scroll-500">
-                                <tr ng-repeat="arbre in arbres | filter: {libelleFrancais: query}">
+                                <tr ng-repeat="arbre in arbres | filter: query">
                                     <td scope='col'>{{arbre.idArbre}}</td>
                                     <td scope='col'>{{arbre.libelleFrancais}}</td>
                                     <td scope='col'>{{arbre.libelleGenre}}</td>
@@ -68,23 +70,26 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col-4">
-        <canvas id="chartGenre"></canvas>
-    </div>
-    <div class="col-4">
-        <canvas id="chartEspece"></canvas>
-    </div>
-    <div class="col-4">
-        <canvas id="chartCommune"></canvas>
+<hr class="mt-5">
+<div class="container-fluid my-5">
+    <h2>Visualisation des données</h2>
+    <div class="row">
+        <div class="col-12 col-md-4 card my-2">
+            <canvas id="chartGenre"></canvas>
+        </div>
+        <div class="col-12 col-md-4 card my-2">
+            <canvas id="chartEspece"></canvas>
+        </div>
+        <div class="col-12 col-md-4 card my-2">
+            <canvas id="chartCommune"></canvas>
+        </div>
     </div>
 </div>
-
 <script>
 
 let filterBy = 'libelleFrancais';
 
-$('.listeCheckBox :checkbox').change(function() {
+$('.filtre :checkbox').change(function() {
  
     if (this.checked) {
         console.log('check #cbGenre');
