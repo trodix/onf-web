@@ -1,6 +1,6 @@
 function getObservation(idArbre, idIntervention) {
 
-    let url = base_url + escape("api/getObservation/" + idArbre + "/" + idIntervention);
+    let url = base_url + escape("api/observations/" + idArbre + "/" + idIntervention);
 
     $.ajax({
         url: url,
@@ -17,7 +17,7 @@ function getObservation(idArbre, idIntervention) {
 
                 //$('#observation-content').append('Contenu: ' + json2[i].observations);
                 console.log('json: ' + json[i].observations);
-                $('#observation-content').append('Contenu: ' + json[i].observations);
+                $('#observation-content').append(json[i].observations == null ? "Aucune observation" : json[i].observations);
             }
         },
         error: function(xhr, ajaxOptions, thrownError) {

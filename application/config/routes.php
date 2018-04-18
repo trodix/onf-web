@@ -52,3 +52,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'Liste';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['api/arbres'] = 'api/getArbres';
+$route['api/arbres/(:any)'] = 'api/getArbresById/$1';
+
+$route['api/genres'] = 'api/getGenres';
+$route['api/especes'] = 'api/getEspeces';
+$route['api/communes'] = 'api/getCommunes';
+$route['api/interventions'] = 'api/getLesInterventionsAll';
+$route['api/intervention_types'] = 'api/getLesTypesIntervention';
+
+$route['api/observations/(:any)/(:any)'] = 'api/getObservation/$1/$2';
+$route['api/interventions/(:any)'] = 'api/getIntervention/$1';
+
+
+
+
+

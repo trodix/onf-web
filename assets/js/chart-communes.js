@@ -1,6 +1,6 @@
 function createChartCommune(element) {
     $.ajax({
-        url: base_url + "api/getCommunes",
+        url: base_url + "api/communes",
         cache: false,
         // data: "zlCateg=" + escape(categChoisie),
         datatype: "json",
