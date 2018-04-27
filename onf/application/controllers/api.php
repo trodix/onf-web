@@ -5,15 +5,45 @@ class api extends CI_Controller {
 
 	public function __construct($config = 'rest')
 	{
-	    header('Access-Control-Allow-Origin: *');
-	    header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
-	    parent::__construct();
+		parent::__construct();
+		header('Access-Control-Allow-Origin: *');
+		header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+        header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
 	}
 
 	public function index()
 	{
 
-        redirect('/', 'location');
+		//redirect('/', 'location');
+		echo("Serveur ok");
+	}
+
+	public function register()
+	{
+		$userData = null;
+		$userData = json_decode($this->input->raw_input_stream, true);
+		//var_dump($userData);
+		$res = [
+			'data' => $this->user_model->register($userData),
+		];
+
+		//echo(json_encode($res));
+		$this->output->set_content_type('application/json', 'Access-Control-Allow-Origin: *')
+					 ->set_output(json_encode($res));
+		
+	}
+
+	public function login(){
+
+		$userData = null;
+		$userData = json_decode($this->input->raw_input_stream, true);
+		//var_dump($userData);
+		$res = [
+			'data'   => $this->user_model->login($userData)
+		];
+
+		header('Content-Type: application/json');
+		echo(json_encode($res));
 	}
 
 	public function getGenres()
