@@ -9,8 +9,6 @@ Class User_model extends CI_Model{
             if($query)
             {
                 $lastid = $this->db->insert_id();
-                //$lastid = $this->db->query("SELECT max(id) FROM user")->row(['id']);
-                //$RegistredUser = $this->db->get_where('user', ['id' => $lastid]);
                 $RegistredUser = $this->db->query("SELECT * FROM user WHERE id = $lastid")->result();
                     
             }else {
@@ -31,7 +29,8 @@ Class User_model extends CI_Model{
                 FROM user
                 WHERE user.email like '$email' AND user.password like '$password_crypt';"
             );
-            return $query->result();
+            return $query->num_rows() > 0 ? $query->result() : false;
+            //return $query->result();
         }
         return false;
     }

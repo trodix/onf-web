@@ -65,6 +65,8 @@ $route['api/intervention_types'] = 'api/getLesTypesIntervention';
 $route['api/observations/(:any)/(:any)'] = 'api/getObservation/$1/$2';
 $route['api/interventions/(:any)'] = 'api/getIntervention/$1';
 
+$route['api/interventions-count/(:any)'] = 'api/getLesTypesInterventionStat/$1';
+
 
 
 

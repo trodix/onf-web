@@ -6,10 +6,11 @@ class Liste extends CI_Controller {
 	public function index()
 	{
 
+		echo("Serveur ok");
         //Appel à la fonction readAll du modele article_model
-        $data = array('lesArbres' =>$this->liste_model->readAll());
+        // $data = array('lesArbres' =>$this->liste_model->readAll());
 
-		$this->layout->view('liste_view', $data);
+		// $this->layout->view('liste_view', $data);
 	}
 
 	public function detail($id)

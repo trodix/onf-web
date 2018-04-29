@@ -8,42 +8,73 @@ class api extends CI_Controller {
 		parent::__construct();
 		header('Access-Control-Allow-Origin: *');
 		header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
-        header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
+		header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
+		header('Content-Type: application/json');
 	}
 
 	public function index()
 	{
 
 		//redirect('/', 'location');
+		header('Content-Type: text/html');
 		echo("Serveur ok");
 	}
 
 	public function register()
 	{
-		$userData = null;
 		$userData = json_decode($this->input->raw_input_stream, true);
-		//var_dump($userData);
-		$res = [
-			'data' => $this->user_model->register($userData),
-		];
+		if ($userData !== null) {
 
-		//echo(json_encode($res));
-		$this->output->set_content_type('application/json', 'Access-Control-Allow-Origin: *')
-					 ->set_output(json_encode($res));
+			$res = $this->user_model->register($userData);
+			if ($res !== false) {
+				$data = [
+					'data' => $res,
+				];
+			} else {
+				$this->output
+						 ->set_header('HTTP/1.1 401 Unauthorized')
+						 ->set_output(json_encode(['data' => "Impossible de créer l'utilisateur."]));
+			}
 		
+			$this->output
+						 ->set_header('HTTP/1.1 200 OK')
+						 ->set_output(json_encode($data));
+		} else {
+			$this->output
+						 ->set_header('HTTP/1.1 401 Unauthorized')
+						 ->set_output(json_encode(['data' => "Erreur, aucune données envoyées au serveur."]));
+		}		
 	}
 
 	public function login(){
 
-		$userData = null;
+		//$userData = json_decode($this->input->raw_input_stream, true);
+		
 		$userData = json_decode($this->input->raw_input_stream, true);
-		//var_dump($userData);
-		$res = [
-			'data'   => $this->user_model->login($userData)
-		];
-
-		header('Content-Type: application/json');
-		echo(json_encode($res));
+		//return "userData: [" . json_encode($userData) . "]";
+		//if ($userData) {
+			$res = $this->user_model->login($userData);
+			return $this->output->set_content_type('application/json')
+						->set_header('HTTP/1.1 200 OK')
+						->set_output(json_encode($data));
+			if ($res !== false){
+				$data = [
+					'data' => $res
+				];
+				$this->output->set_content_type('application/json')
+						->set_header('HTTP/1.1 200 OK')
+						->set_output(json_encode($data));
+			}else {
+				$this->output->set_content_type('application/json')
+						 ->set_header('HTTP/1.1 401 Unauthorized')
+						 ->set_output(json_encode(['data' => "Identifiants incorrects."]));
+			}
+			
+		//} else {
+			// $this->output->set_content_type('application/json')
+			// 			 ->set_header('HTTP/1.1 402 Unauthorized')
+			// 			 ->set_output(json_encode(['data' => "Erreur, aucune données envoyées au serveur."]));
+		//}
 	}
 
 	public function getGenres()
@@ -111,7 +142,7 @@ class api extends CI_Controller {
 
 	public function getIntervention($idArbre)
 	{
-		$lesInterventionsArbre = $this->liste_model->readLesInterventionsArbre($idArbre);
+		$lesInterventionsArbre = $this->liste_model->readLesInterventions($idArbre);
 		//print_r($lesInterventionsArbre);
 		header('Content-Type: application/json');
 		echo json_encode($lesInterventionsArbre);
@@ -140,6 +171,19 @@ class api extends CI_Controller {
 			[
 				$lesTypesIntervention
 			]
+		);
+	}
+
+	public function getLesTypesInterventionStat($idArbre)
+	{
+		$lesTypesIntervention = $this->liste_model->readLesInterventionsArbre($idArbre);
+		//print_r($lesInterventionsArbre);
+		header('Content-Type: application/json');
+		//echo json_encode(array('lesTypesIntervention' => $lesTypesIntervention));
+		echo json_encode(
+			
+				$lesTypesIntervention
+			
 		);
 	}
 }
