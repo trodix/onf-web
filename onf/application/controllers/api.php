@@ -51,30 +51,36 @@ class api extends CI_Controller {
 		//$userData = json_decode($this->input->raw_input_stream, true);
 		
 		$userData = json_decode($this->input->raw_input_stream, true);
+		//var_dump($userData);
 		//return "userData: [" . json_encode($userData) . "]";
-		//if ($userData) {
+		// if ($userData) {
 			$res = $this->user_model->login($userData);
-			return $this->output->set_content_type('application/json')
-						->set_header('HTTP/1.1 200 OK')
-						->set_output(json_encode($data));
+			//print_r($res);
+			// return $this->output->set_content_type('application/json')
+			// 			->set_header('HTTP/1.1 200 OK')
+			// 			->set_output(json_encode($data));
 			if ($res !== false){
+				//echo "!== false";
 				$data = [
+					'success' => true,
 					'data' => $res
 				];
 				$this->output->set_content_type('application/json')
 						->set_header('HTTP/1.1 200 OK')
 						->set_output(json_encode($data));
 			}else {
+				//echo "false";
+
 				$this->output->set_content_type('application/json')
-						 ->set_header('HTTP/1.1 401 Unauthorized')
-						 ->set_output(json_encode(['data' => "Identifiants incorrects."]));
+						 ->set_header('HTTP/1.1 200 Unauthorized')
+						 ->set_output(json_encode(['success' => false, 'data' => "Identifiants incorrects."]));
 			}
 			
-		//} else {
-			// $this->output->set_content_type('application/json')
-			// 			 ->set_header('HTTP/1.1 402 Unauthorized')
-			// 			 ->set_output(json_encode(['data' => "Erreur, aucune données envoyées au serveur."]));
-		//}
+		// } else {
+		// 	$this->output->set_content_type('application/json')
+		// 				 ->set_header('HTTP/1.1 402 Unauthorized')
+		// 				 ->set_output(json_encode(['data' => "Erreur, aucune données envoyées au serveur."]));
+		// }
 	}
 
 	public function getGenres()

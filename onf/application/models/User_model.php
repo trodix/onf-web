@@ -25,7 +25,7 @@ Class User_model extends CI_Model{
             $email = $userData['email'];
             $password_crypt = $userData['password'];
             $query = $this->db->query("
-                SELECT user.username, user.email
+                SELECT user.username, user.email, user.privilege
                 FROM user
                 WHERE user.email like '$email' AND user.password like '$password_crypt';"
             );
